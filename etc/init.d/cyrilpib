@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -f /etc/cyrilpib ] && . /etc/cyrilpib
+
+sudo -u pi autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -f pi@${CYRILPIB_REMOTE_HOST} -N -p 22 -i ~/.ssh/id_rsa -R9139:localhost:22
+
+/etc/init.d/shutdown-button.py >> /var/log/shutdown-button.log 2>&1 &
+exit 0

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sudo -u pi autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -f pi@192.168.22.30 -N -p 9135 -i ~/.ssh/id_rsa -R9139:localhost:22
-
-/etc/init.d/shutdown-button.py >> /var/log/shutdown-button.log 2>&1 &
-exit 0
