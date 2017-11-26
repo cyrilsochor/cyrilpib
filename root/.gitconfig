@@ -1,3 +1,5 @@
 [user]
 	email = cyril.sochor@gmail.com
 	name = Cyril Sochor
+[push]
+	default = simple
