@@ -5,7 +5,7 @@ import subprocess
 from datetime import datetime
 import time
 
-INPUT_PIN = 18
+INPUT_PIN = 3
 MONITOR_DELAY = 0.01 # in seconds
 MONITOR_INERATIONS = 200 # *DELAY = 2 seconds
 
