@@ -1,0 +1,9 @@
+set -e
+set -u
+set -x
+
+mkdir /mnt/backup-pi-1
+echo "/dev/sda1       /mnt/backup-pi-1        btrfs   defaults,nofail 0       3"  >> /etc/fstab
+
+apt-get install autossh python3-rpi.gpio
+
