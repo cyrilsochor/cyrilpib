@@ -11,4 +11,4 @@ grep /mnt/backup-pi-1 /etc/fstab || echo "/dev/sda1       /mnt/backup-pi-1      
 
 apt-get --assume-yes install autossh python3-rpi.gpio
 
-
+[ -f /boot/config.txt ] && ( grep enable_uart /boot/config.txt || echo enable_uart=1 >> /boot/config.txt )
