@@ -9,6 +9,9 @@ echo "pi:$(openssl rand -base64 12)" | chpasswd
 mkdir -p /mnt/backup-pi-1
 grep /mnt/backup-pi-1 /etc/fstab || echo "/dev/sda1       /mnt/backup-pi-1        btrfs   defaults,nofail 0       3"  >> /etc/fstab
 
-apt-get --assume-yes install autossh python3-rpi.gpio
+apt-get --assume-yes install autossh rsync python3-rpi.gpio oracle-java8-jdk snapper iotop iftop
+
+systemctl enable rsync
+systemctl start rsync
 
 [ -f /boot/config.txt ] && ( grep enable_uart /boot/config.txt || echo enable_uart=1 >> /boot/config.txt )
