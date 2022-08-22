@@ -2,9 +2,12 @@
 
 [ -f /etc/cyrilpib ] && . /etc/cyrilpib
 
+# tunel na CA
 sudo -u pi autossh -M 0 -o "ServerAliveInterval=30" -o "ServerAliveCountMax=3" -f pi@${CYRILPIB_REMOTE_HOST} -R 9139:localhost:22 -L 9130:localhost:9130 -N -p 22 -i ~/.ssh/id_rsa
 
+# tunel na SYNOBUS
 sudo -u pi autossh -M 0 -o "ServerAliveInterval=30" -o "ServerAliveCountMax=3" -f cb@localhost -N -p 9130 -i ~/.ssh/id_rsa -R 9139:localhost:22
 
+# ovladani vypinaciho tlacitka
 /etc/init.d/shutdown-button.py >> /var/log/shutdown-button.log 2>&1 &
 exit 0

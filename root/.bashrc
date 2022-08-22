@@ -16,3 +16,8 @@ alias l='ls $LS_OPTIONS -lA'
 # alias rm='rm -i'
 # alias cp='cp -i'
 # alias mv='mv -i'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
